@@ -1,36 +1,25 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Artificertech\HubSpot\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
+use Artificertech\HubSpot\HubSpotServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
 
 class TestCase extends Orchestra
 {
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
-    }
-
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            HubSpotServiceProvider::class,
         ];
     }
 
     public function getEnvironmentSetUp($app)
     {
-        config()->set('database.default', 'testing');
+        config()->set('hubspot.connections.hubspot.token', 'default-testing-token');
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
-        $migration->up();
-        */
+        config()->set('hubspot.connections.test-connection', [
+            'token' => 'test-connection-testing-token',
+        ]);
     }
 }
