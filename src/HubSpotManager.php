@@ -80,6 +80,17 @@ class HubSpotManager
         return $config;
     }
 
+    public function connected(string $connection = null): bool
+    {
+        try {
+            $this->connection($connection);
+
+            return true;
+        } catch (\InvalidArgumentException $th) {
+            return false;
+        }
+    }
+
     /**
      * Dynamically pass methods to the default connection.
      *
