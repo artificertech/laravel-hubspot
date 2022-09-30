@@ -64,6 +64,7 @@ see [hubspot-api-php](https://github.com/HubSpot/hubspot-api-php) for usage
 ```php
 /** @var \HubSpot\Discovery\Discovery */
 $hubspotDiscovery = \Artificertech\HubSpot\Facades\HubSpot::connection();
+$hubspotDiscovery = \Artificertech\HubSpot\Facades\HubSpot::connection('hubspot');
 
 /** @var \HubSpot\Discovery\Crm\Discovery */
 $crm = $hubspotDiscovery->crm();
@@ -71,6 +72,17 @@ $crm = $hubspotDiscovery->crm();
 /** @var \HubSpot\Discovery\Crm\Discovery */
 $crm = \Artificertech\HubSpot\Facades\HubSpot::crm();
 ```
+
+you may check if a specific connection is enabled like so:
+
+```php
+\Artificertech\HubSpot\Facades\HubSpot::connected();
+
+\Artificertech\HubSpot\Facades\HubSpot::connected('hubspot');
+```
+
+This does not check if your access token is valid. It only checks that your
+access token is provided. This is useful for disabling connections locally
 
 ## Testing
 
