@@ -5,6 +5,8 @@ namespace Artificertech\HubSpot\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
+ * @method static \HubSpot\Discovery\Discovery                          connection(string $name = null)
+ * @method static bool                                                  connected(string $connection = null)
  * @method static \HubSpot\Discovery\Discovery                          create(\GuzzleHttp\ClientInterface $client = null, \HubSpot\Config $config = null)
  * @method static \HubSpot\Discovery\Discovery                          createWithApiKey(string $apiKey, \GuzzleHttp\ClientInterface $client = null)
  * @method static \HubSpot\Discovery\Discovery                          createWithAccessToken(string $accessToken, \GuzzleHttp\ClientInterface $client = null)
@@ -19,7 +21,6 @@ use Illuminate\Support\Facades\Facade;
  * @method static \HubSpot\Discovery\Marketing\Discovery                marketing()
  * @method static \HubSpot\Discovery\Settings\Discovery                 settings()
  * @method static \HubSpot\Discovery\Webhooks\Discovery                 webhooks()
- * @method static \HubSpot\Discovery\Discovery                          connection(string $name = null)
  *
  * @see \HubSpot\Factory
  * @see \HubSpot\Discovery\Discovery
