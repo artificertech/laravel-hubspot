@@ -27,7 +27,6 @@ class HubSpotManager
     /**
      * Create a new hubspot manager instance.
      *
-     * @param  \Illuminate\Contracts\Foundation\Application  $app
      * @return void
      */
     public function __construct(protected Application $app)
@@ -36,9 +35,6 @@ class HubSpotManager
 
     /**
      * Get a hubspot discovery instance
-     *
-     * @param  string|null  $name
-     * @return \HubSpot\Discovery\Discovery
      */
     public function connection(string $name = null): \HubSpot\Discovery\Discovery
     {
