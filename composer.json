@@ -19,7 +19,7 @@
     "require": {
         "php": "^8.1",
         "hubspot/api-client": "^8.3",
-        "illuminate/contracts": "^9.0",
+        "illuminate/contracts": "^9.0|^10.0|^11.0",
         "spatie/laravel-package-tools": "^1.13.0"
     },
     "require-dev": {
