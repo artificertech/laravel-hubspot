@@ -27,20 +27,14 @@ class HubSpotManager
     /**
      * Create a new hubspot manager instance.
      *
-     * @param  \Illuminate\Contracts\Foundation\Application  $app
      * @return void
      */
-    public function __construct(protected Application $app)
-    {
-    }
+    public function __construct(protected Application $app) {}
 
     /**
      * Get a hubspot discovery instance
-     *
-     * @param  string|null  $name
-     * @return \HubSpot\Discovery\Discovery
      */
-    public function connection(string $name = null): \HubSpot\Discovery\Discovery
+    public function connection(?string $name = null): \HubSpot\Discovery\Discovery
     {
         $name = $this->parseConnectionName($name);
 
@@ -53,7 +47,7 @@ class HubSpotManager
         return $this->connections[$name];
     }
 
-    protected function parseConnectionName(string $name = null): string
+    protected function parseConnectionName(?string $name = null): string
     {
         return $name ?: $this->app['config']['hubspot.default'];
     }
@@ -80,7 +74,7 @@ class HubSpotManager
         return $config;
     }
 
-    public function connected(string $connection = null): bool
+    public function connected(?string $connection = null): bool
     {
         try {
             $this->connection($connection);
