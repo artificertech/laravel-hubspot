@@ -2,6 +2,16 @@
 
 All notable changes to `laravel-hubspot` will be documented in this file.
 
+## v1.3 - 2025-02-26
+
+### What's Changed
+
+* Bump stefanzweifel/git-auto-commit-action from 4 to 5 by @dependabot in https://github.com/artificertech/laravel-hubspot/pull/14
+* Bump ramsey/composer-install from 1 to 2 by @dependabot in https://github.com/artificertech/laravel-hubspot/pull/5
+* Bump actions/checkout from 3 to 4 by @dependabot in https://github.com/artificertech/laravel-hubspot/pull/13
+
+**Full Changelog**: https://github.com/artificertech/laravel-hubspot/compare/v1.2...v1.3
+
 ## v1.2 - 2023-08-08
 
 ### What's Changed
